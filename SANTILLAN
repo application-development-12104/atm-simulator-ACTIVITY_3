@@ -1,0 +1,56 @@
+using System;
+
+class Calculator
+{
+    static void Main()
+    {
+        // Display your name and program title
+        Console.WriteLine("Calculator by Roy John Santillan");
+        Console.WriteLine("================================");
+
+        // Input first number
+        Console.Write("Enter 1st number: ");
+        double num1 = Convert.ToDouble(Console.ReadLine());
+
+        // Input second number
+        Console.Write("Enter 2nd number: ");
+        double num2 = Convert.ToDouble(Console.ReadLine());
+
+        // Prompt user to choose an operator
+        Console.WriteLine("Operator to use (+, -, *, /): ");
+        char operatorChoice = Console.ReadKey().KeyChar;
+        Console.WriteLine(); // Move to the next line after the user input
+
+        // Variable to store result
+        double result = 0;
+
+        // Perform the operation based on user input
+        switch (operatorChoice)
+        {
+            case '+':
+                result = num1 + num2;
+                break;
+            case '-':
+                result = num1 - num2;
+                break;
+            case '*':
+                result = num1 * num2;
+                break;
+            case '/':
+                // Handle division by zero
+                if (num2 == 0)
+                {
+                    Console.WriteLine("Error: Division by zero is not allowed.");
+                    return; // Exit the program if division by zero occurs
+                }
+                result = num1 / num2;
+                break;
+            default:
+                Console.WriteLine("Invalid operator. Please choose +, -, *, or /.");
+                return; // Exit the program if an invalid operator is chosen
+        }
+
+        // Display the result of the calculation
+        Console.WriteLine($"Result: {num1} {operatorChoice} {num2} = {result}");
+    }
+}
