@@ -1,0 +1,58 @@
+using System;
+class Program
+{
+    static void Main()
+    {
+        // Step 2: Display your name and the program title
+        Console.WriteLine("Welcome to the Basic Calculator!");
+        Console.WriteLine("Created by: Quia-ot");
+        Console.WriteLine();
+        // Step 3: Prompt the user to enter two numbers
+        Console.Write("Enter the first number: ");
+        decimal num1 = Convert.ToDecimal(Console.ReadLine());
+        Console.Write("Enter the second number: ");
+        decimal num2 = Convert.ToDecimal(Console.ReadLine());
+        // Step 4: Prompt the user to choose an operator
+        Console.Write("Choose an operator (+, -, *, /): ");
+        string operation = Console.ReadLine();
+        decimal result = 0;
+        bool validOperation = true;
+        // Step 5: Use if-else or a switch statement to perform the selected operation
+        switch (operation)
+        {
+            case "+":
+                result = num1 + num2;
+                break;
+            case "-":
+                result = num1 - num2;
+                break;
+            case "*":
+                result = num1 * num2;
+                break;
+            case "/":
+                // Step 6: Handle division by zero
+                if (num2 == 0)
+                {
+                    Console.WriteLine("Error: Division by zero is not allowed.");
+                    validOperation = false;
+                }
+                else
+                {
+                    result = num1 / num2;
+                }
+                break;
+            default:
+            Console.WriteLine("Error: Invalid operator. Please use +, -, *, or /.");
+                validOperation = false;
+                break;
+        }
+        // Step 7: Display the result of the calculation
+        if (validOperation)
+        {
+            Console.WriteLine();
+            Console.WriteLine($"The result of {num1} {operation} {num2} = {result}");
+        }
+        Console.WriteLine();
+        Console.WriteLine("Thank You for Using this Calculator!");
+    }
+}
