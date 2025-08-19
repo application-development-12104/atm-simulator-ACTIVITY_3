@@ -1,0 +1,66 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        Console.WriteLine("Basic Calculator Program by Dave Gonzaga");
+        Console.WriteLine("----------------------------------");
+
+        Console.Write("Enter the first number: ");
+        double num1 = Convert.ToDouble(Console.ReadLine());
+
+        Console.Write("Enter the second number: ");
+        double num2 = Convert.ToDouble(Console.ReadLine());
+
+        Console.Write("Enter an operator (+, -, *, /): ");
+        string op = Console.ReadLine();
+
+        double result;
+        bool validOperation = true;
+
+        switch (op)
+        {
+            case "+":
+                result = num1 + num2;
+                Console.WriteLine($"Result: {num1} + {num2} = {result}");
+                break;
+
+            case "-":
+                result = num1 - num2;
+                Console.WriteLine($"Result: {num1} - {num2} = {result}");
+                break;
+
+            case "*":
+                result = num1 * num2;
+                Console.WriteLine($"Result: {num1} * {num2} = {result}");
+                break;
+
+            case "/":
+                // Step 6: Handle division by zero
+                if (num2 == 0)
+                {
+                    Console.WriteLine("Error: Division by zero is not allowed.");
+                }
+                else
+                {
+                    result = num1 / num2;
+                    Console.WriteLine($"Result: {num1} / {num2} = {result}");
+                }
+                break;
+
+            default:
+                Console.WriteLine("Invalid operator entered.");
+                validOperation = false;
+                break;
+        }
+
+        if (validOperation)
+        {
+            Console.WriteLine("Thank you for using calculator!");
+        }
+
+        Console.WriteLine("Press any key to exit...");
+        Console.ReadKey();
+    }
+}
