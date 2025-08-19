@@ -1,0 +1,52 @@
+using System;
+
+public class HelloWorld
+{
+    public static void Main(string[] args)
+    {
+        Console.WriteLine ("Calculator Program by [Juper Navarro]");
+        Console.WriteLine();
+        
+        Console.Write ("Enter first number:");
+        double num1 = Convert.ToDouble(Console.ReadLine());
+        
+        Console.Write ("Enter second number:");
+        double num2 = Convert.ToDouble(Console.ReadLine());
+        
+         Console.Write("Choose an operator (+, -, *, /): ");
+        char operation = Console.ReadKey().KeyChar;
+        Console.WriteLine();
+
+        double result;
+
+        switch (operation)
+        {
+            case '+':
+                result = num1 + num2;
+                break;
+            case '-':
+                result = num1 - num2;
+                break;
+            case '*':
+                result = num1 * num2;
+                break;
+            case '/':
+                if (num2 == 0)
+                {
+                    Console.WriteLine("Error: Division by zero is not allowed.");
+                    return;
+                }
+                result = num1 / num2;
+                break;
+            default:
+                Console.WriteLine("Invalid operator.");
+                return;
+        }
+
+         Console.WriteLine($"The result of {num1} {operation} {num2} is: {result}");
+         Console.WriteLine();
+         Console.WriteLine("Thank You");
+         
+    }
+     
+}
