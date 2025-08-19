@@ -1,0 +1,68 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        Console.WriteLine("Basic Calculator by Winslett Therese");
+        Console.WriteLine(" ");
+
+        Console.Write("Enter the first number: ");
+        double num1 = Convert.ToDouble(Console.ReadLine());
+
+        Console.Write("Enter the second number: ");
+        double num2 = Convert.ToDouble(Console.ReadLine());
+
+        Console.Write("Choose an operator (+, -, *, /): ");
+        string operation = Console.ReadLine();
+
+        double result;
+
+        switch (operation)
+        {
+            case "+":
+                result = num1 + num2;
+                Console.WriteLine(" ");
+                Console.WriteLine("The result of: " + num1 + " + " + num2 + " = " + result);
+                Console.WriteLine(" ");
+                break;
+
+            case "-":
+                result = num1 - num2;
+                Console.WriteLine(" ");
+                Console.WriteLine("The result of: " + num1 + " - " + num2 + " = " + result);
+                Console.WriteLine(" ");
+                break;
+
+            case "*":
+                result = num1 * num2;
+                Console.WriteLine(" ");
+                Console.WriteLine("The result of " + num1 + " * " + num2 + " = " + result);
+                break;
+
+            case "/":
+                if (num2 == 0)
+                {
+                    Console.WriteLine(" ");
+                    Console.WriteLine("Error: Division by zero is not allowed.");
+                    Console.WriteLine(" ");
+                }
+                else
+                {
+                    result = num1 / num2;
+                    Console.WriteLine(" ");
+                    Console.WriteLine("The result of: " + num1 + " / " + num2 + " = " + result);
+                    Console.WriteLine(" ");
+                }
+                break;
+
+            default:
+                Console.WriteLine(" ");
+                Console.WriteLine("Error: Invalid operator. Please use +, -, *, or /.");
+                Console.WriteLine(" ");
+                break;
+        }
+
+        Console.WriteLine("Thanks for using this calculator. :))");
+    }
+}
