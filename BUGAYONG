@@ -1,0 +1,44 @@
+using System;
+
+public class Activity2
+{
+    public static void Main(string[] args)
+    {
+        Console.WriteLine("Basic Calculator Program by Jan Philip Bugayong\n");
+        
+        double n1=0;
+        double n2=0;
+        string op = "";
+        
+        Console.Write("Enter the first number: ");
+        n1 = Convert.ToDouble(Console.ReadLine());
+        Console.Write("Enter the second number: ");
+        n2 = Convert.ToDouble(Console.ReadLine());
+        Console.Write("Enter an operator (+, -, *, /): ");
+        op = Console.ReadLine();
+        
+        double sum = n1+n2;
+        double diff = n1-n2;
+        double prod = n1*n2;
+        switch(op){
+            case "+": Console.WriteLine("\nThe result of " + n1 + " + " + n2 + " is: " + sum);
+            break;
+            case "-": Console.WriteLine("\nThe result of " + n1 + " - " + n2 + " is: " + diff);
+            break;
+            case "*": Console.WriteLine("\nThe result of " + n1 + " * " + n2 + " is: " + prod);
+            break;
+            case "/": 
+                if(n2==0){
+                    Console.WriteLine("\nError: Division by zero is not allowed.");
+                }else{
+                    double quot = n1/n2;
+                    Console.WriteLine("\nThe result of " + n1 + " / " + n2 + " is: " + quot);
+                }
+            break;
+            default: Console.WriteLine("\nError: Invalid operator.");
+            break;
+        }
+        Console.WriteLine("\nThank you for using the calculator!");
+        
+    }
+}
