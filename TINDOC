@@ -7,7 +7,7 @@ namespace CalculatorActivity2
         static void Main(string[] args)
         {
             
-            Console.WriteLine("Basic Calculator Program: John Dave Tindoc\n");
+            Console.WriteLine("Basic Calculator Program: [John Dave Tindoc]\n");
 
            
             Console.Write("Enter the first number: ");
