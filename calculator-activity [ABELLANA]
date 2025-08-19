@@ -1,0 +1,66 @@
+using System;
+
+public class Calculator
+{
+    public static void Main(string[] args)
+    {
+       
+        // Step 2: Display name and program title
+        Console.WriteLine("\t\t\t*******************************************");
+        Console.WriteLine("\t\t\tCalculator Program by Jesserita R. Abellana");
+        Console.WriteLine("\t\t\t*******************************************\n");
+
+        // Step 3: Prompt user to enter two numbers
+        Console.Write("Enter the first number: ");
+        double num1 = Convert.ToDouble(Console.ReadLine());
+
+        Console.Write("Enter the second number: ");
+        double num2 = Convert.ToDouble(Console.ReadLine());
+
+        // Step 4: Prompt user to choose an operator
+        Console.Write("Choose an operator (+, -, *, /): ");
+        char op = Convert.ToChar(Console.ReadLine());
+
+        double result = 0;
+        bool validOperation = true;
+
+        // Step 5: Use switch to perform operation
+        switch (op)
+        {
+            case '+':
+                result = num1 + num2;
+                break;
+            case '-':
+                result = num1 - num2;
+                break;
+            case '*':
+                result = num1 * num2;
+                break;
+            case '/':
+                // Step 6: Handle division by zero
+                if (num2 == 0)
+                {
+                    Console.WriteLine("Error: Division by zero is not allowed.");
+                    validOperation = false;
+                }
+                else
+                {
+                    result = num1 / num2;
+                }
+                break;
+            default:
+                Console.WriteLine("Invalid operator selected.");
+                validOperation = false;
+                break;
+        }
+
+        // Step 7: Display the result
+        if (validOperation)
+        {
+            Console.WriteLine($"\nResult: {num1} {op} {num2} = {result}");
+        }
+
+        Console.WriteLine("\nPress any key to exit...");
+        Console.ReadKey();
+    }
+}
