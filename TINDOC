@@ -1,0 +1,70 @@
+using System;
+
+namespace CalculatorActivity2
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            
+            Console.WriteLine("Basic Calculator Program: John Dave Tindoc\n");
+
+           
+            Console.Write("Enter the first number: ");
+            double num1 = Convert.ToDouble(Console.ReadLine());
+
+            Console.Write("Enter the second number: ");
+            double num2 = Convert.ToDouble(Console.ReadLine());
+
+           
+            Console.Write("Choose an operator (+, -, *, /): ");
+            string operation = Console.ReadLine();
+
+            double result = 0;
+            bool validOperation = true;
+
+            
+            switch (operation)
+            {
+                case "+":
+                    result = num1 + num2;
+                    break;
+
+                case "-":
+                    result = num1 - num2;
+                    break;
+
+                case "*":
+                    result = num1 * num2;
+                    break;
+
+                case "/":
+                    
+                    if (num2 == 0)
+                    {
+                        Console.WriteLine("Error: Cannot divide by zero.");
+                        validOperation = false;
+                    }
+                    else
+                    {
+                        result = num1 / num2;
+                    }
+                    break;
+
+                default:
+                    Console.WriteLine("Invalid operator selected.");
+                    validOperation = false;
+                    break;
+            }
+
+            
+            if (validOperation)
+            {
+                Console.WriteLine($"\nResult: {num1} {operation} {num2} = {result}");
+            }
+
+            Console.WriteLine("\nPress any key to exit.");
+            Console.ReadKey();
+        }
+    }
+}
